@@ -7,7 +7,7 @@ const inquirer = require("inquirer");
 const questions = [];
 
 // TODO: Create a function to write README file
-const writeToFile = (name, projectTitle, githubUsername, email, deployedApplication, description, installationSteps, credits, license, badges, projectFeatures, contributions, dependencies, tests) => {
+const writeToFile = (name, projectTitle, githubUsername, email, deployedApplication, description, installationSteps, credits, license, projectFeatures, contributions, dependencies, tests) => {
     return `
     # Project Title
 
@@ -15,9 +15,9 @@ const writeToFile = (name, projectTitle, githubUsername, email, deployedApplicat
 
     ## Live Links & GitHub Information
 
-    [${projectTitle} live Link](!${deployedApplication})
-    [${name}'s GitHub Username](!${githubUsername})
-    [${name}'s Email](!${email})
+    [${projectTitle} live Link](${deployedApplication})
+    [${name}'s GitHub Username](${githubUsername})
+    [${name}'s Email](${email})
 
     ## Description
     
@@ -34,10 +34,6 @@ const writeToFile = (name, projectTitle, githubUsername, email, deployedApplicat
     ## License
     
     ${license}
-
-    ## Badges
-    
-    ${badges}
 
     ## Features
     
@@ -65,7 +61,7 @@ inquirer.prompt ([
     },
     {
         type: 'input',
-        message:'What is your project/s name?',
+        message:"What is your project's name?",
         name: 'projectTitle'
     },
     {
@@ -77,7 +73,7 @@ inquirer.prompt ([
         type: 'input',
         message:'What is your email address?',
         name: 'email',
-        validate: emailValidation
+        //validate: emailValidation
     },
     {
         type: 'input',
@@ -103,13 +99,12 @@ inquirer.prompt ([
         type: 'rawlist',
         message:'What type of license should your project have?',
         name: 'license',
-        validate: licenseValidation
-    },
-    {
-        type: 'checkbox',
-        message:'Select which badges you want to add.',
-        name: 'badges',
-        validate: badgeValidation
+        choices: [
+            '',
+            '',
+            ''
+          ]
+        //validate: licenseValidation
     },
     {
         type: 'input',
@@ -135,7 +130,7 @@ inquirer.prompt ([
 ])
 .then((data) => {
     const readMe = writeToFile(data);
-    fs.writeFile("README.md", md, (err) => {
+    fs.writeFile("README.md", readMe, (err) => {
         err ? console.err("failed to save README file") : console.log("README file saved!!");
     });
 
@@ -144,36 +139,28 @@ inquirer.prompt ([
     console.log(err);
 });
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to initialize app
+// function init() {}
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();
 
-/* validate: (Function) Receive the user input and answers hash. Should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.*/
+// /* validate: (Function) Receive the user input and answers hash. Should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.*/
 
-//Validations
+// //Validations
 
- //need to research this conditional
- const emailValidation = async (input) => {
-    if (input !== '@gmail.com' || input !== '@yahoo.com' || input !== '@outlook.com' || input !== '@') {
-       return 'Must insert a valid email address';
-    }
-    return true;
- };
+//  //need to research this conditional
+//  const emailValidation = async (input) => {
+//     if (input !== '@gmail.com' || input !== '@yahoo.com' || input !== '@outlook.com' || input !== '@') {
+//        return 'Must insert a valid email address';
+//     }
+//     return true;
+//  };
 
- //need to write a conditional statement that inserts the correct license
- const licenseValidation = async (input) => {
-    if (input !== 'y' || input !== 'n') {
-       return 'Must choose an option to continue.';
-    }
-    return true;
- };
-
- //need to write a conditional statement that plugs in badges if the checkbox is selected
- const badgeValidation = async (input) => {
-    if (input !== 'y' || input !== 'n') {
-       return 'Must Choose yes or no to continue';
-    }
-    return true;
- };
+//  //need to write a conditional statement that inserts the correct license
+//  const licenseValidation = async (input) => {
+//     if (input !== 'y' || input !== 'n') {
+//        return 'Must choose an option to continue.';
+//     }
+//     return true;
+//  };
