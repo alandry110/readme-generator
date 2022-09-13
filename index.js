@@ -1,12 +1,7 @@
-// TODO: Include packages needed for this application
 
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-// TODO: Create an array of questions for user input
-const questions = [];
-
-// TODO: Create a function to write README file
 const writeToFile = (name, projectTitle, githubUsername, email, deployedApplication, description, installationSteps, credits, license, projectFeatures, contributions, dependencies, tests) => {
     return `
     # Project Title
@@ -53,6 +48,8 @@ const writeToFile = (name, projectTitle, githubUsername, email, deployedApplicat
     `
 }
 
+const emailValidation = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
 inquirer.prompt ([
     {
         type: 'input',
@@ -73,7 +70,14 @@ inquirer.prompt ([
         type: 'input',
         message:'What is your email address?',
         name: 'email',
-        //validate: emailValidation
+        // test regex function that takes a string and compares it to regex function
+        validate: answer => {
+            if (emailValidation.test(answer)) {
+                return true;
+            } else {
+                return 'Error! Must insert valid email address.'
+            }
+        }
     },
     {
         type: 'input',
@@ -100,15 +104,15 @@ inquirer.prompt ([
         message:'What type of license should your project have?',
         name: 'license',
         choices: [
-            '',
-            '',
-            ''
+            'MIT License',
+            'GNU GPLv3',
+            'Apache License 2.0',
+            'Other'
           ]
-        //validate: licenseValidation
     },
     {
         type: 'input',
-        message:'List your projects features',
+        message:'List your projects features.',
         name: 'projectFeatures'
     },
     {
@@ -130,37 +134,20 @@ inquirer.prompt ([
 ])
 .then((data) => {
     const readMe = writeToFile(data);
+
+    let license 
+    if (data.license === 'MIT License') {
+    } else if (data.license === 'GNU GPLv3') {
+    } else if (data.license === 'Apache License 2.0') { 
+    } else if (data.license === 'Other') {
+    } else {
+        return 'Error! Must choice a license.'
+    };
+
     fs.writeFile("README.md", readMe, (err) => {
         err ? console.err("failed to save README file") : console.log("README file saved!!");
     });
-
 })
 .catch((err) => {
     console.log(err);
 });
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
-
-// /* validate: (Function) Receive the user input and answers hash. Should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.*/
-
-// //Validations
-
-//  //need to research this conditional
-//  const emailValidation = async (input) => {
-//     if (input !== '@gmail.com' || input !== '@yahoo.com' || input !== '@outlook.com' || input !== '@') {
-//        return 'Must insert a valid email address';
-//     }
-//     return true;
-//  };
-
-//  //need to write a conditional statement that inserts the correct license
-//  const licenseValidation = async (input) => {
-//     if (input !== 'y' || input !== 'n') {
-//        return 'Must choose an option to continue.';
-//     }
-//     return true;
-//  };
