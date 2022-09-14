@@ -2,7 +2,9 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-const writeToFile = (name, projectTitle, githubUsername, email, deployedApplication, description, installationSteps, credits, license, projectFeatures, contributions, dependencies, tests) => {
+
+
+const writeToFile = ({name, projectTitle, githubUsername, email, deployedApplication, description, installationSteps, credits, license, projectFeatures, contributions, dependencies, tests}) => {
     return `
     # Project Title
 
@@ -133,6 +135,7 @@ inquirer.prompt ([
      
 ])
 .then((data) => {
+    console.log(data)
     const readMe = writeToFile(data);
 
     let license 
