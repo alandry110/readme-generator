@@ -4,49 +4,62 @@ const inquirer = require("inquirer");
 
 
 
-const writeToFile = ({name, projectTitle, githubUsername, email, deployedApplication, description, installationSteps, credits, license, projectFeatures, contributions, dependencies, tests}) => {
+const writeToFile = ({name, year, projectTitle, githubUsername, email, deployedApplication, description, installationSteps, credits, dependencies, tests, license}) => {
     return `
-    # Project Title
-
-    ${projectTitle}
-
-    ## Live Links & GitHub Information
-
-    [${projectTitle} live Link](${deployedApplication})
-    [${name}'s GitHub Username](${githubUsername})
-    [${name}'s Email](${email})
-
+    # ${projectTitle}
+    
     ## Description
-    
     ${description}
-    
-    ## Installation
 
-    ${installationSteps}
-    
-    ## Credits
+    ## Table of Contents 
+    - [User Story](#user-story)
+    - [Acceptance Criteria](#acceptance-criteria)
+    - [Technologies Used](#technologies-used)
+    - [Final Application](#final-application)
+    - [Installation](#installation)
+    - [Tests](#tests)
+    - [Credits](#credits)
+    - [Contact Me](#contact-me)
+    - [${license}](#${license})
 
-    ${credits}
-    
-    ## License
-    
-    ${license}
+    ## User Story
+    ![Screenshot of user story]()
 
-    ## Features
+    ## Acceptance Criteria
+    ![Screenshot of acceptance criteria]()
     
-    ${projectFeatures}
+    ### Additional instructions:
+    * Repository as a unique name, has proper file structure, naming conventions, proper indentation, quality comments, and a quality README file with description.
+    * Application resembles the following mock-up functionality: 
 
-    ## How to Contribute
+    ![screenshot of mock-up]()
 
-    ${contributions}
-    
+    ## Technologies Used
+    * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+    * ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+    * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
     ## Dependencies 
-
     ${dependencies}
 
+    ## Final Application
+    [Live Deployed Link](!${deployedApplication})
+    !['description of screenshot or video']()
+
+    ## Installation
+    ${installationSteps}
+
     ## Tests
-    
     ${tests}
+    
+    ## Credits
+    ${credits}
+
+    ## Contact Me
+    If you have any questions about this repository, please contact me at ${email}. To view more of my work head over to [my GitHub!](!${githubUsername}) 🎉
+
+    ## ${license}
+    Copyright © ${year}, ${name}
     `
 }
 
@@ -57,6 +70,11 @@ inquirer.prompt ([
         type: 'input',
         message:'What is your name?',
         name: 'name'
+    },
+    {
+        type: 'input',
+        message:'What year is it?',
+        name: 'year'
     },
     {
         type: 'input',
@@ -114,16 +132,6 @@ inquirer.prompt ([
     },
     {
         type: 'input',
-        message:'List your projects features.',
-        name: 'projectFeatures'
-    },
-    {
-        type: 'input',
-        message:'What does the user need to know about contributing to the repo?',
-        name: 'contributions'
-    },
-    {
-        type: 'input',
         message:'What command should be run to install dependencies?',
         name: 'dependencies'
     },
@@ -131,21 +139,20 @@ inquirer.prompt ([
         type: 'input',
         message:'What command should be run to run tests?',
         name: 'tests'
-    },
-     
+    },  
 ])
 .then((data) => {
-    console.log(data)
     const readMe = writeToFile(data);
 
-    let license 
-    if (data.license === 'MIT License') {
-    } else if (data.license === 'GNU GPLv3') {
-    } else if (data.license === 'Apache License 2.0') { 
-    } else if (data.license === 'Other') {
-    } else {
-        return 'Error! Must choice a license.'
-    };
+    //FUTURE DEVELOPMENT 
+    // let license 
+    // if (data.license === 'MIT License') {
+    // } else if (data.license === 'GNU GPLv3') {
+    // } else if (data.license === 'Apache License 2.0') { 
+    // } else if (data.license === 'Other') {
+    // } else {
+    //     return 'Error! Must choice a license.'
+    // };
 
     fs.writeFile("README.md", readMe, (err) => {
         err ? console.err("failed to save README file") : console.log("README file saved!!");
