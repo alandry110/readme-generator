@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 
 
 
-const writeToFile = ({name, year, projectTitle, githubUsername, email, deployedApplication, description, installationSteps, credits, dependencies, tests, license}) => {
+const writeToFile = ({name, year, projectTitle, githubUsername, email, deployedApplication, userStory, acceptanceCriteria, description, installationSteps, credits, dependencies, tests, license}) => {
     return `
     # ${projectTitle}
     
@@ -23,10 +23,10 @@ const writeToFile = ({name, year, projectTitle, githubUsername, email, deployedA
     - [${license}](#${license})
 
     ## User Story
-    ![Screenshot of user story]()
+    ${userStory}
 
     ## Acceptance Criteria
-    ![Screenshot of acceptance criteria]()
+    ${acceptanceCriteria}
     
     ### Additional instructions:
     * Repository as a unique name, has proper file structure, naming conventions, proper indentation, quality comments, and a quality README file with description.
@@ -103,6 +103,16 @@ inquirer.prompt ([
         type: 'input',
         message:'What is your projects live URL page?',
         name: 'deployedApplication'
+    },
+    {
+        type: 'input',
+        message:'What is your projects user story?',
+        name: 'userStory'
+    },
+    {
+        type: 'input',
+        message:'What is your projects acceptance criteria?',
+        name: 'acceptanceCriteria'
     },
     {
         type: 'input',
