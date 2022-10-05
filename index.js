@@ -2,8 +2,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-
-
 const writeToFile = ({name, year, projectTitle, githubUsername, email, deployedApplication, userStory, acceptanceCriteria, description, installationSteps, credits, dependencies, tests, license}) => {
     return `
 # ${projectTitle}
