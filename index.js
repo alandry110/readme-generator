@@ -6,61 +6,67 @@ const inquirer = require("inquirer");
 
 const writeToFile = ({name, year, projectTitle, githubUsername, email, deployedApplication, userStory, acceptanceCriteria, description, installationSteps, credits, dependencies, tests, license}) => {
     return `
-    # ${projectTitle}
+# ${projectTitle}
     
-    ## Description
-    ${description}
+## Description
+${description}
 
-    ## Table of Contents 
-    - [User Story](#user-story)
-    - [Acceptance Criteria](#acceptance-criteria)
-    - [Technologies Used](#technologies-used)
-    - [Final Application](#final-application)
-    - [Installation](#installation)
-    - [Tests](#tests)
-    - [Credits](#credits)
-    - [Contact Me](#contact-me)
-    - [${license}](#${license})
+## Table of Contents 
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Technologies Used](#technologies-used)
+- [Final Application](#final-application)
+- [Installation](#installation)
+- [Tests](#tests)
+- [Credits](#credits)
+- [Contact Me](#contact-me)
+- [License](#license)
 
-    ## User Story
-    ${userStory}
+## User Story
+'''md
+${userStory}
+'''
 
-    ## Acceptance Criteria
-    ${acceptanceCriteria}
+## Acceptance Criteria
+'''md
+${acceptanceCriteria}
+'''
     
-    ### Additional instructions:
-    * Repository as a unique name, has proper file structure, naming conventions, proper indentation, quality comments, and a quality README file with description.
-    * Application resembles the following mock-up functionality: 
+### Additional instructions:
+* Repository as a unique name, has proper file structure, naming conventions, proper indentation, quality comments, and a quality README file with description.
+* Application resembles the following mock-up functionality: 
 
-    ![screenshot of mock-up]()
+![screenshot of mock-up]()
 
-    ## Technologies Used
-    * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-    * ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-    * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+## Technologies Used
+* ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+* ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-    ## Dependencies 
-    ${dependencies}
+## Dependencies 
+Use the following command to install the proper dependencies for this application:
+${dependencies}
 
-    ## Final Application
-    [Live Deployed Link](!${deployedApplication})
-    !['description of screenshot or video']()
+## Final Application
+[Live Deployed Link](!${deployedApplication})
+!['description of screenshot or video']()
 
-    ## Installation
-    ${installationSteps}
+## Installation
+${installationSteps}
 
-    ## Tests
-    ${tests}
+## Tests
+${tests}
     
-    ## Credits
-    ${credits}
+## Credits
+${credits}
 
-    ## Contact Me
-    If you have any questions about this repository, please contact me at ${email}. To view more of my work head over to [my GitHub!](!${githubUsername}) 🎉
+## Contact Me
+If you have any questions about this repository, please contact me at ${email}. To view more of my work head over to [my GitHub!](!${githubUsername}) 🎉
 
-    ## ${license}
-    Copyright © ${year}, ${name}
-    `
+## License
+${license}
+
+Copyright © ${year}, ${name}`
 }
 
 const emailValidation = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
