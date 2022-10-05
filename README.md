@@ -54,7 +54,7 @@ Use the following command to install the proper dependencies for this applicatio
 * `npm install inquirer@8.2.4`
 
 ## Final Application
-![Video of Functioning Command line Application](https://drive.google.com/file/d/1bAPYbgB4yzojwuNZ9tbfvBeGvllLGQgj/view?usp=sharing)
+https://drive.google.com/file/d/1bAPYbgB4yzojwuNZ9tbfvBeGvllLGQgj/view?usp=sharing
 
 ## Installation
 * Download [Node.js](https://nodejs.org/en/) 
