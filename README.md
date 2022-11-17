@@ -56,7 +56,7 @@ Use the following command to install the proper dependencies for this applicatio
 * `npm install inquirer@8.2.4`
 
 ## Final Application
-[Live Deployed Link](!https://drive.google.com/file/d/1ricnsd3XfqnnQ8-s_jGeSjevrtUQXNyK/view)
+[Live Deployed Link](https://drive.google.com/file/d/1ricnsd3XfqnnQ8-s_jGeSjevrtUQXNyK/view)
 
 ## Installation
 * Download [Node.js](https://nodejs.org/en/) * Clone repository from GitHub. Open terminal and install the [Inquirer package](https://www.npmjs.com/package/inquirer) * To run the application type `node index.js` in your terminal 
