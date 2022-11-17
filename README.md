@@ -1,13 +1,13 @@
-# Node.js Challenge: Professional README Generator
+
+# Node.js Challenge: Professional README Generator 
     
 ## Description
-The purpose of this repository is to create a Node.js command-line application that dynamically generates a professional README.md file from a user’s input using Inquirer package.
+The purpose of this repository is to create a Node.js command-line application that dynamically generates a professional README.md file from a user’s input Inquirer package.
 
 ## Table of Contents 
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Technologies Used](#technologies-used)
-- [Dependencies](#dependencies)
 - [Final Application](#final-application)
 - [Installation](#installation)
 - [Tests](#tests)
@@ -32,8 +32,7 @@ THEN this is displayed as the title of the README
 WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions 
 THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests 
 WHEN I choose a license for my application from a list of options 
-THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under 
-WHEN I enter my GitHub username 
+THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under WHEN I enter my GitHub username 
 THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile 
 WHEN I enter my email address 
 THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions 
@@ -45,33 +44,28 @@ THEN I am taken to the corresponding section of the README
 * Repository as a unique name, has proper file structure, naming conventions, proper indentation, quality comments, and a quality README file with description.
 
 ## Technologies Used
+* ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+* ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
 
 ## Dependencies 
 Use the following command to install the proper dependencies for this application:
 * `npm install inquirer@8.2.4`
 
 ## Final Application
-![Video of Functioning Command line Application](https://drive.google.com/file/d/1bAPYbgB4yzojwuNZ9tbfvBeGvllLGQgj/view?usp=sharing)
+[Live Deployed Link](!##)
 
 ## Installation
-* Download [Node.js](https://nodejs.org/en/) 
-* Clone repository from GitHub. Open terminal and install the [Inquirer package](https://www.npmjs.com/package/inquirer) 
-* To run the application type `node index.js` in your terminal 
+* Download [Node.js](https://nodejs.org/en/) * Clone repository from GitHub. Open terminal and install the [Inquirer package](https://www.npmjs.com/package/inquirer) * To run the application type `node index.js` in your terminal 
 
 ## Tests
 There are no tests for this application.
     
 ## Credits
-* [Bootstrap Documentation](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-* [NPM Documentation](https://www.npmjs.com/)
-* [Inquirer Documentation](https://www.npmjs.com/package/inquirer)
-* [Node.js Documentation](https://nodejs.org/en/)
+NA
 
 ## Contact Me
-If you have any questions about this repository, please contact me at ashclandry@gmail.com. To view more of my work head over to [my GitHub!](https://github.com/ashclandry) 🎉
+If you have any questions about this repository, please contact me at ashclandry@gmail.com. To view more of my work head over to [my GitHub!](!https://github.com/ashclandry) 🎉
 
 ## License
 MIT License
