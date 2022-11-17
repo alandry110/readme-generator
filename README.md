@@ -47,13 +47,22 @@ THEN I am taken to the corresponding section of the README
 * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 * ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+<<<<<<< HEAD
+=======
+* ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+* ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+>>>>>>> f98db75f0e9df12c0dd650a9f080d77fa3d83ff6
 
 ## Dependencies 
 Use the following command to install the proper dependencies for this application:
 * `npm install inquirer@8.2.4`
 
 ## Final Application
+<<<<<<< HEAD
 [Live Deployed Link](!##)
+=======
+https://drive.google.com/file/d/1bAPYbgB4yzojwuNZ9tbfvBeGvllLGQgj/view?usp=sharing
+>>>>>>> f98db75f0e9df12c0dd650a9f080d77fa3d83ff6
 
 ## Installation
 * Download [Node.js](https://nodejs.org/en/) * Clone repository from GitHub. Open terminal and install the [Inquirer package](https://www.npmjs.com/package/inquirer) * To run the application type `node index.js` in your terminal 
